@@ -1,26 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title></title>
-</head>
-<body>
-  <script>
-    function getIpCountry() {
-    }
-
-    const userCountry = getIpCountry();
-
-    if (userCountry === 'jp') {
-      window.location.href = 'https://taikoplus.github.io/jp-dl.html';
-    } else if (userCountry === 'kr') {
-      window.location.href = 'https://taikoplus.github.io/kr-dl.html';
-    } else {
-      window.location.href = 'https://taikoplus.github.io/en-dl.html';
-    }
-  </script>
-</body>
-</html>
+    <head>
+        <script>
+            function detectLanguage() {
+                const language = navigator.language || navigator.userLanguage;
+                if (language.startsWith('ko')) {
+                    window.location.href = 'kr-dl.html';
+                } else if (language.startsWith('jp')) {
+                    window.location.href = 'jp-dl.html';
+                } else{
+                    window.location.href = 'en-dl.html';
+                }
+            }
+            window.onload = detectLanguage;
+        </script>
+    </head>
+    </html>
 <!-- saved from url=(0033)https://taiko.nojiiro.net/jp/ -->
 <html lang="ja" class="js skrollr skrollr-desktop"><head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta http-equiv="Content-Security-Policy" content="script-src &#39;self&#39; &#39;unsafe-eval&#39; &#39;unsafe-inline&#39; https://www.googletagmanager.com/ https://product.bandainamco-am.co.jp/ http://bandainamco-am.co.jp/ https://www.google-analytics.com/ https://cdn-au.onetrust.com/ https://www.youtube.com/ https://platform.twitter.com/; style-src &#39;self&#39; &#39;unsafe-inline&#39; https://fonts.googleapis.com/ http://bandainamco-am.co.jp/;">

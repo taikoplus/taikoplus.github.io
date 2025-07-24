@@ -1,26 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title></title>
-</head>
-<body>
-  <script>
-    function getIpCountry() {
-    }
-
-    const userCountry = getIpCountry();
-
-    if (userCountry === 'jp') {
-      window.location.href = 'https://taikoplus.github.io/jp.html';
-    } else if (userCountry === 'kr') {
-      window.location.href = 'https://taikoplus.github.io/kr.html';
-    } else {
-      window.location.href = 'https://taikoplus.github.io/en.html';
-    }
-  </script>
-</body>
-</html>
+    <head>
+        <script>
+            function detectLanguage() {
+                const language = navigator.language || navigator.userLanguage;
+                if (language.startsWith('ko')) {
+                    window.location.href = 'kr.html';
+                } else if (language.startsWith('jp')) {
+                    window.location.href = 'jp.html';
+                } else{
+                    window.location.href = 'en.html';
+                }
+            }
+            window.onload = detectLanguage;
+        </script>
+    </head>
+    </html>
 <head><meta name="google-site-verification" content="8kkgkUUTwcU3FvJ1mE6Z9BAoa1EHFW5sqPjJrN4zuJo" /><head>
 <html lang="ja" class="js skrollr skrollr-desktop"><head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1.0">

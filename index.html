@@ -1,24 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title></title>
-</head>
-<body>
-  <script>
-    function getIpCountry() {
-    }
-
-    const userCountry = getIpCountry();
-
-    if (userCountry === 'jp') {
-      window.location.href = 'https://taikoplus.github.io/jp.html';
-    } else if (userCountry === 'kr') {
-      window.location.href = 'https://taikoplus.github.io/kr.html';
-    } else {
-      window.location.href = 'https://taikoplus.github.io/en.html';
-    }
-  </script>
-</body>
-</html>
- <p id="ptop"><a href="jp.html">Go To Taiko no Tatsujin Nijiiro Plus Web Page</a></p>
+    <html lang="jp">
+    <head>
+        <script>
+            function detectLanguage() {
+                const language = navigator.language || navigator.userLanguage;
+                if (language.startsWith('ko')) {
+                    window.location.href = 'kr.html';
+                } else if (language.startsWith('jp')) {
+                    window.location.href = 'jp.html';
+                } else {
+                    window.location.href = 'en.html';
+                }
+            }
+            window.onload = detectLanguage;
+        </script>
+    </head>
+    </html>
