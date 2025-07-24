@@ -3,18 +3,16 @@
         <script>
             function detectLanguage() {
                 const language = navigator.language || navigator.userLanguage;
-                if (language.startsWith('ko')) {
-                    window.location.href = 'kr.html';
-                } else if (language.startsWith('jp')) {
+                if (language.startsWith('jp')) {
                     window.location.href = 'jp.html';
+                } else if (language.startsWith('ko')) {
+                    window.location.href = 'kr.html';
                 } else{
-                    window.location.href = 'en.html';
                 }
             }
             window.onload = detectLanguage;
         </script>
     </head>
-    </html>
 <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1.0">
 <title>Taiko no Tatsujin Nijiiro Plus ver. | EXPLUS </title>
 <meta name="keywords" content="太鼓の達人ニジイロプラス","Taiko Nijiiro Plus">
