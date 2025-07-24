@@ -7,11 +7,12 @@
 <body>
   <script>
     function getIpCountry() {
+	const countryCode = "JP";
     }
 
     const userCountry = getIpCountry();
 
-    if (userCountry === 'jp') {
+    if (userCountry === 'JP') {
       window.location.href = 'https://taikoplus.github.io/jp.html';
     } else if (userCountry === 'kr') {
       window.location.href = 'https://taikoplus.github.io/kr.html';
