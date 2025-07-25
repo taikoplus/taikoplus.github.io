@@ -1,29 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>
         function redirectToCountry() {
-            fetch('https://ipapi.co/json/')
-                .then(response => response.json())
-                .then(data => {
-                    const countryCode = data.country.toLowerCase();
-                    if (countryCode === 'kr') {
-                        window.location.href = 'kr.html';
-                    } else if (countryCode === 'jp') {
-                        window.location.href = 'jp.html';
-                    } else {
-                        window.location.href = 'en.html';
-                    }
-                })
-                .catch(error => {
-                    console.error('Error fetching IP data:', error);
-                    window.location.href = 'en.html';
-                });
-        }
+            const userLanguage = navigator.language || navigator.userLanguage;
+            const userCountry = userLanguage.substring(0, 2);
 
-        window.onload = redirectToCountry;
+            switch (userCountry) {
+                case "ja":
+                    redirectURL = "https://taikoplus.github.io/jp.html";
+                    break;
+                case "ko":
+                    redirectURL = "https://taikoplus.github.io/kr.html";
+                    break;
+                default:
+                    redirectURL = "https://taikoplus.github.io/en.html"; // 기본 URL
+            }
+            window.location.href = redirectURL;
+        }
     </script>
 </head>
+<body onload="redirectToCountry()">
+</body>
 </html>
+<html lang="ja" class="js skrollr skrollr-desktop"><head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1.0">
 <title>Taiko no Tatsujin Nijiiro Plus ver. | EXPLUS </title>
 <meta name="keywords" content="太鼓の達人ニジイロプラス","Taiko Nijiiro Plus">

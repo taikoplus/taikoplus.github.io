@@ -1,20 +1,31 @@
 <!DOCTYPE html>
-    <head>
-        <script>
-            function detectLanguage() {
-                const language = navigator.language || navigator.userLanguage;
-                if (language.startsWith('ko')) {
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        function redirectToCountry() {
+            const userLanguage = navigator.language || navigator.userLanguage;
+            const userCountry = userLanguage.substring(0, 2);
 
-                } else if (language.startsWith('jp')) {
-                    window.location.href = 'jp-how.html';
-                } else{
-                    window.location.href = 'en-how.html';
-                }
+            switch (userCountry) {
+                case "ja":
+                    redirectURL = "https://taikoplus.github.io/jp-how.html";
+                    break;
+                case "ko":
+                    redirectURL = "https://taikoplus.github.io/kr-how.html";
+                    break;
+                default:
+                    redirectURL = "https://taikoplus.github.io/en-how.html"; // 기본 URL
             }
-            window.onload = detectLanguage;
-        </script>
-    </head>
-<html lang="ja" class="js skrollr skrollr-desktop"><head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+            window.location.href = redirectURL;
+        }
+    </script>
+</head>
+<body onload="redirectToCountry()">
+</body>
+</html>
+<html lang="kr" class="js skrollr skrollr-desktop"><head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta http-equiv="Content-Security-Policy" content="script-src &#39;self&#39; &#39;unsafe-eval&#39; &#39;unsafe-inline&#39; https://www.googletagmanager.com/ https://product.bandainamco-am.co.jp/ http://bandainamco-am.co.jp/ https://www.google-analytics.com/ https://cdn-au.onetrust.com/ https://www.youtube.com/ https://platform.twitter.com/; style-src &#39;self&#39; &#39;unsafe-inline&#39; https://fonts.googleapis.com/ http://bandainamco-am.co.jp/;">
 
 <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1.0">
