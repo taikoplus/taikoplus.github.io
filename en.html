@@ -1,18 +1,29 @@
-<!DOCTYPE html>
-    <head>
-        <script>
-            function detectLanguage() {
-                const language = navigator.language || navigator.userLanguage;
-                if (language.startsWith('jp')) {
-                    window.location.href = 'jp.html';
-                } else if (language.startsWith('ko')) {
-                    window.location.href = 'kr.html';
-                } else{
-                }
-            }
-            window.onload = detectLanguage;
-        </script>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <script>
+        function redirectToCountry() {
+            fetch('https://ipapi.co/json/')
+                .then(response => response.json())
+                .then(data => {
+                    const countryCode = data.country.toLowerCase();
+                    if (countryCode === 'kr') {
+                        window.location.href = 'kr.html';
+                    } else if (countryCode === 'jp') {
+                        window.location.href = 'jp.html';
+                    } else {
+                        window.location.href = 'en.html';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching IP data:', error);
+                    window.location.href = 'en.html';
+                });
+        }
+
+        window.onload = redirectToCountry;
+    </script>
+</head>
+</html>
 <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1.0">
 <title>Taiko no Tatsujin Nijiiro Plus ver. | EXPLUS </title>
 <meta name="keywords" content="太鼓の達人ニジイロプラス","Taiko Nijiiro Plus">

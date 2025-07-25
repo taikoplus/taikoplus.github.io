@@ -1,19 +1,29 @@
-<!DOCTYPE html>
-    <head>
-        <script>
-            function detectLanguage() {
-                const language = navigator.language || navigator.userLanguage;
-                if (language.startsWith('jp')) {
+<head>
+    <meta charset="UTF-8">
+    <script>
+        function redirectToCountry() {
+            fetch('https://ipapi.co/json/')
+                .then(response => response.json())
+                .then(data => {
+                    const countryCode = data.country.toLowerCase();
+                    if (countryCode === 'kr') {
+                        window.location.href = 'kr.html';
+                    } else if (countryCode === 'jp') {
+                        window.location.href = 'jp.html';
+                    } else {
+                        window.location.href = 'en.html';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching IP data:', error);
+                    window.location.href = 'en.html';
+                });
+        }
 
-                } else if (language.startsWith('ko')) {
-                    window.location.href = 'kr.html';
-                } else{
-				window.location.href = 'en.html';
-                }
-            }
-            window.onload = detectLanguage;
-        </script>
-    </head>
+        window.onload = redirectToCountry;
+    </script>
+</head>
+</html>
 <head><meta name="google-site-verification" content="8kkgkUUTwcU3FvJ1mE6Z9BAoa1EHFW5sqPjJrN4zuJo" /><head>
 <html lang="ja" class="js skrollr skrollr-desktop"><head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1.0">
