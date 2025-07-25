@@ -5,18 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>
         function redirectToCountry() {
-            const userLanguage = navigator.language || navigator.userLanguage;
+            const userLanguage = navigator.language;
             const userCountry = userLanguage.substring(0, 2);
 
             switch (userCountry) {
                 case "ja":
-                    redirectURL = "https://taikoplus.github.io/jp.html";
+                    redirectURL = "jp.html";
                     break;
                 case "ko":
-                    redirectURL = "https://taikoplus.github.io/kr.html";
                     break;
                 default:
-                    redirectURL = "https://taikoplus.github.io/en.html"; // 기본 URL
+                    redirectURL = "en.html";
             }
             window.location.href = redirectURL;
         }
