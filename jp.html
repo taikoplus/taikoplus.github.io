@@ -11,15 +11,14 @@
 
             switch (userCountry) {
                 case "ja":
-                    redirectURL = "https://taikoplus.github.io/jp.html";
+                    window.location.href = "https://taikoplus.github.io/jp.html";
                     break;
                 case "ko":
-                    redirectURL = "https://taikoplus.github.io/kr.html";
+                    window.location.href = "https://taikoplus.github.io/kr.html";
                     break;
                 default:
-                    redirectURL = "https://taikoplus.github.io/en.html"; // 기본 URL
+                    window.location.href = "https://taikoplus.github.io/en.html"; // 기본 URL
             }
-            window.location.href = redirectURL;
         }
     </script>
 </head>
